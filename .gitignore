@@ -1,0 +1,12 @@
+# IDE files
+.idea/
+
+# Executables
+*.exe
+*.exe~
+
+#Go files
+vendor/
+
+#Env
+.env
