@@ -1,0 +1,2 @@
+GET http://localhost:8080/v1/users
+x-api-key: ApiKey a91953256a2720b2a7f6e33584013bf615e4fd1aad2b0d9b3b4b4be092b9fee8

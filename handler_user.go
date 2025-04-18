@@ -35,11 +35,10 @@ func (apiCfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	type createUserResponse struct {
-		Id uuid.UUID `json:"id"`
-	}
+	respondWithJSON(w, 201, mapDatabaseUserToCreateUserResponse(user))
+}
 
-	respondWithJSON(w, 201, createUserResponse{
-		Id: user.ID,
-	})
+func (apiCfg *apiConfig) handlerGetUser(w http.ResponseWriter, r *http.Request, user database.User) {
+
+	respondWithJSON(w, 200, mapDatabaseUserToCreateUserResponse(user))
 }
