@@ -1,3 +1,5 @@
+A lightweight Go backend server, Postgres integrated, for aggregating data from RSS feeds.
+
 Generate db models and data access layer
 
 `sqlc generate`
