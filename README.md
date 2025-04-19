@@ -1,4 +1,4 @@
-### A lightweight Go backend server, Postgres integrated, for aggregating data from RSS Feeds.
+### A lightweight Go Rest API, Postgres integrated, for aggregating data from RSS Feeds.
 
 Building locally:
 
