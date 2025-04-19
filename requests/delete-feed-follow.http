@@ -1,0 +1,2 @@
+DELETE http://localhost:8080/v1/feeds/follows/40fffde4-040d-44db-847d-de876fcc9f45
+x-api-key: ApiKey 16d6e071cbccb49f69bda138d5332aca0f81c25f414b6df9b33183eacaa03ac6

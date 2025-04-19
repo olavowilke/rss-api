@@ -10,6 +10,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
 type apiConfig struct {
@@ -38,6 +39,8 @@ func main() {
 		DB: queries,
 	}
 
+	go startScraping(apiConfig.DB, 2, time.Second*15)
+
 	//configure base router
 	baseRouter := chi.NewRouter()
 	baseRouter.Use(cors.Handler(cors.Options{
@@ -55,6 +58,12 @@ func main() {
 	v1Router.Get("/err", handlerError)
 	v1Router.Post("/users", apiConfig.handlerCreateUser)
 	v1Router.Get("/users", apiConfig.middlewareAuth(apiConfig.handlerGetUser))
+	v1Router.Post("/feeds", apiConfig.middlewareAuth(apiConfig.handlerCreateFeed))
+	v1Router.Get("/feeds", apiConfig.handlerGetFeeds)
+	v1Router.Post("/feeds/follows", apiConfig.middlewareAuth(apiConfig.handlerCreateFeedFollow))
+	v1Router.Get("/feeds/follows", apiConfig.middlewareAuth(apiConfig.handlerGetFeedFollows))
+	v1Router.Delete("/feeds/follows/{feedFollowID}", apiConfig.middlewareAuth(apiConfig.handlerDeleteFeedFollow))
+	v1Router.Get("/posts", apiConfig.middlewareAuth(apiConfig.handlerGetPostsForUser))
 
 	baseRouter.Mount("/v1", v1Router)
 

@@ -1,0 +1,2 @@
+GET http://localhost:8080/v1/posts
+x-api-key: ApiKey 16d6e071cbccb49f69bda138d5332aca0f81c25f414b6df9b33183eacaa03ac6

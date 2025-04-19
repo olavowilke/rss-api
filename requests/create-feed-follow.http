@@ -1,0 +1,6 @@
+POST http://localhost:8080/v1/feeds/follows
+x-api-key: ApiKey 16d6e071cbccb49f69bda138d5332aca0f81c25f414b6df9b33183eacaa03ac6
+
+{
+  "feedId": "2e07b73f-7aa4-44ce-87b4-9e137268d98f"
+}
